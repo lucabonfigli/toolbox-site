@@ -199,9 +199,10 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .rows .row.fade{-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%);
   mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%)}
 
-/* === THE GATE — page three: a five-speed gate, the five steps as gears ==== */
-.cta .wrap{display:grid;place-items:center}
-.flip{width:100%;max-width:880px;perspective:2400px}
+/* === THE GATE — page three: a five-speed gate, and a start button ======= */
+.cta{padding:clamp(48px,8vh,100px) 0}
+.cta .wrap{width:100%;display:grid;place-items:center}
+.flip{width:100%;max-width:1100px;perspective:2400px}
 .card{display:grid;transform-style:preserve-3d;transition:transform 700ms var(--ease,ease)}
 .flip.on .card{transform:rotateY(180deg)}
 .face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;
@@ -209,7 +210,11 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .back{transform:rotateY(180deg)}
 @media (prefers-reduced-motion:reduce){ .card{transition:none} }
 
-.gate{width:min(100%,640px);height:auto;margin-top:clamp(14px,2.4vh,28px);overflow:visible}
+.ask{font-size:clamp(30px,min(5vw,8vh),84px);line-height:.98;max-width:16ch}
+.console{width:100%;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:clamp(28px,6vw,96px);margin-top:clamp(20px,4vh,48px)}
+
+.gate{flex:0 1 auto;width:min(100%,560px,calc(52vh * 1.6));height:auto;overflow:visible}
 /* the gate's channel: a wide paper stroke under a slightly narrower ground one */
 .gate .chan{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .gate .chan.o{stroke:var(--paper);stroke-width:36}
@@ -217,12 +222,27 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .gate .gear{cursor:pointer;outline:none}
 .gate .gear rect{fill:transparent}
 .gate .gear text{fill:var(--paper);text-anchor:middle;opacity:.5;transition:opacity var(--motion,160ms)}
-.gate .gear .n{font-family:var(--display);font-size:34px}
+.gate .gear .n{font-family:var(--display);font-size:32px}
 .gate .gear .s{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
 .gate .gear:hover text,.gate .gear:focus-visible text,.gate .gear.on text{opacity:1}
 .gate .knob{fill:var(--red)}
-.step{min-height:1.6em;margin-top:clamp(8px,1.6vh,18px);font-family:var(--mono);
-  font-size:clamp(13px,1.3vw,18px);letter-spacing:.04em;color:rgba(239,235,225,.62)}
+
+/* the start button: an engine start, round, red, in a ring */
+.start{flex:none;width:clamp(124px,min(13vw,20vh),188px);aspect-ratio:1;border-radius:50%;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3em;
+  background:var(--red);color:var(--paper);border:none;
+  box-shadow:0 0 0 clamp(8px,1vw,12px) var(--ink),0 0 0 calc(clamp(8px,1vw,12px) + 1px) rgba(239,235,225,.5);
+  font-family:var(--mono);font-size:clamp(12px,1.1vw,15px);letter-spacing:.24em;text-transform:uppercase;
+  transition:transform var(--motion,160ms) var(--ease,ease),background var(--motion,160ms)}
+.start:hover,.start:focus-visible{background:var(--paper);color:var(--ink);outline:none}
+.start:active{transform:scale(.95)}
+
+/* the send button on the form: a pill */
+.go{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 28px;border:none;cursor:pointer;
+  border-radius:999px;background:var(--red);color:var(--paper);
+  font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  transition:background var(--motion,160ms),color var(--motion,160ms)}
+.go:hover,.go:focus-visible{background:var(--paper);color:var(--ink);outline:none}
 
 /* the form, on the back */
 .back{align-items:stretch;text-align:left}
@@ -235,7 +255,6 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   padding:8px 0;border-radius:0;outline:none;resize:vertical;transition:border-color var(--motion,160ms)}
 .field input:focus,.field textarea:focus{border-bottom-color:var(--red)}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(12px,2vw,24px);margin-top:clamp(18px,3vh,36px)}
-.actions .go{margin-top:0;border:none;cursor:pointer}
 .quiet{height:48px;padding:0 24px;border-radius:999px;border:1px solid rgba(239,235,225,.4);background:none;
   color:var(--paper);font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
   transition:background var(--motion,160ms),color var(--motion,160ms)}

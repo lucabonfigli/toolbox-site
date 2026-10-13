@@ -93,19 +93,20 @@
       <div class="card">
 
         <div class="face front">
-          <p class="caps soft">What would you build first?</p>
-          <svg class="gate" viewBox="0 0 640 400" role="group" aria-label="How it goes">
-            <path class="chan o" d="M110 82 V318 M320 82 V318 M530 82 V200 M110 200 H530"/>
-            <path class="chan i" d="M110 82 V318 M320 82 V318 M530 82 V200 M110 200 H530"/>
-            <g class="gear" data-gear="1" tabindex="0" role="button" aria-label="1, Submit"><rect x="60" y="0" width="100" height="130"/><text class="n" x="110" y="44">1</text><text class="s" x="110" y="64">Submit</text></g>
-            <g class="gear" data-gear="2" tabindex="0" role="button" aria-label="2, Assess"><rect x="60" y="270" width="100" height="130"/><text class="n" x="110" y="368">2</text><text class="s" x="110" y="388">Assess</text></g>
-            <g class="gear" data-gear="3" tabindex="0" role="button" aria-label="3, Build"><rect x="270" y="0" width="100" height="130"/><text class="n" x="320" y="44">3</text><text class="s" x="320" y="64">Build</text></g>
-            <g class="gear" data-gear="4" tabindex="0" role="button" aria-label="4, Deploy"><rect x="270" y="270" width="100" height="130"/><text class="n" x="320" y="368">4</text><text class="s" x="320" y="388">Deploy</text></g>
-            <g class="gear" data-gear="5" tabindex="0" role="button" aria-label="5, Deliver"><rect x="480" y="0" width="100" height="130"/><text class="n" x="530" y="44">5</text><text class="s" x="530" y="64">Deliver</text></g>
-            <circle class="knob" r="16" cx="110" cy="92"/>
-          </svg>
-          <p class="mono step" aria-live="polite"></p>
-          <button class="go" type="button" data-open>Submit a tool</button>
+          <h2 class="ask">What would you build first?</h2>
+          <div class="console">
+            <svg class="gate" viewBox="0 0 640 400" role="group" aria-label="How it goes">
+              <path class="chan o" d="M110 100 V300 M320 100 V300 M530 100 V200 M110 200 H530"/>
+              <path class="chan i" d="M110 100 V300 M320 100 V300 M530 100 V200 M110 200 H530"/>
+              <g class="gear" data-gear="1" tabindex="0" role="button" aria-label="1, Submit"><rect x="60" y="0" width="100" height="140"/><text class="n" x="110" y="36">1</text><text class="s" x="110" y="60">Submit</text></g>
+              <g class="gear" data-gear="2" tabindex="0" role="button" aria-label="2, Assess"><rect x="60" y="260" width="100" height="140"/><text class="n" x="110" y="364">2</text><text class="s" x="110" y="388">Assess</text></g>
+              <g class="gear" data-gear="3" tabindex="0" role="button" aria-label="3, Build"><rect x="270" y="0" width="100" height="140"/><text class="n" x="320" y="36">3</text><text class="s" x="320" y="60">Build</text></g>
+              <g class="gear" data-gear="4" tabindex="0" role="button" aria-label="4, Deploy"><rect x="270" y="260" width="100" height="140"/><text class="n" x="320" y="364">4</text><text class="s" x="320" y="388">Deploy</text></g>
+              <g class="gear" data-gear="5" tabindex="0" role="button" aria-label="5, Deliver"><rect x="480" y="0" width="100" height="140"/><text class="n" x="530" y="36">5</text><text class="s" x="530" y="60">Deliver</text></g>
+              <circle class="knob" r="16" cx="110" cy="110"/>
+            </svg>
+            <button class="start" type="button" data-open><span>Submit</span><span>a tool</span></button>
+          </div>
         </div>
 
         <form class="face back" data-form novalidate>

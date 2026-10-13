@@ -1,7 +1,7 @@
 /* ===========================================================================
    THE GATE — page three.
    The knob rests in first, Submit. Pointing at a gear shifts to it through
-   neutral, the way a gear lever moves, and its step reads out underneath.
+   neutral, the way a gear lever moves.
    Submit a tool flips the panel to the form; the form is not connected yet,
    and says so rather than pretending to send.
    =========================================================================== */
@@ -9,19 +9,12 @@
   var flip = document.querySelector('[data-flip]');
   if (!flip) return;
   var svg = flip.querySelector('.gate'), knob = svg.querySelector('.knob');
-  var gears = svg.querySelectorAll('.gear'), step = flip.querySelector('.step');
+  var gears = svg.querySelectorAll('.gear');
   var front = flip.querySelector('.front'), form = flip.querySelector('[data-form]');
   var status = form.querySelector('.status');
 
   var NEUTRAL = 200;
-  var AT = { 1:[110, 92], 2:[110, 308], 3:[320, 92], 4:[320, 308], 5:[530, 92] };
-  var SAYS = {
-    1: 'The work, and what it should produce.',
-    2: 'What it takes, what it makes, one or many, who sees it.',
-    3: 'Built against your systems and your documents.',
-    4: 'A new node in your workspace. Nothing else moves.',
-    5: 'Your team runs it; the output stays on the record.'
-  };
+  var AT = { 1:[110, 110], 2:[110, 290], 3:[320, 110], 4:[320, 290], 5:[530, 110] };
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var gear = 1, pos = AT[1].slice(), run = 0;
 
@@ -34,7 +27,6 @@
     var path = [pos, [a[0], NEUTRAL], [b[0], NEUTRAL], b];
     gear = to;
     gears.forEach(function(g){ g.classList.toggle('on', +g.dataset.gear === to); });
-    step.textContent = SAYS[to];
     if (reduced) { place(b); return; }
     var id = ++run, legs = [], total = 0;
     for (var i = 1; i < path.length; i++) {
@@ -64,7 +56,6 @@
     });
   });
   gears[0].classList.add('on');
-  step.textContent = SAYS[1];
 
   /* the flip: the hidden face is inert, so neither tab nor a reader lands in it */
   function setFace(back){
