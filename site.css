@@ -126,9 +126,22 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .dark .hair{background:rgba(239,235,225,.24)}
 .dark .soft{color:rgba(239,235,225,.55)}
 
-/* === THE RECORD — page two's example ================================== */
-.record{margin-top:clamp(28px,5vw,64px)}
-.record .line{position:relative;height:2px;background:var(--ink);margin:0 6px}
+/* === THE RECORD — page two's example, framed as a chassis plate ========= */
+.plate{position:relative;margin-top:clamp(24px,4vw,48px);max-width:980px;
+  border:2px solid var(--ink);padding:clamp(18px,2.4vw,28px) clamp(20px,3vw,40px)}
+.plate .rivet{position:absolute;width:9px;height:9px;border-radius:50%;border:1px solid var(--ink)}
+.plate .rivet.tl{top:8px;left:8px}   .plate .rivet.tr{top:8px;right:8px}
+.plate .rivet.bl{bottom:8px;left:8px} .plate .rivet.br{bottom:8px;right:8px}
+.plate .row{display:grid;grid-template-columns:clamp(72px,10vw,120px) 1fr;align-items:center;
+  gap:clamp(12px,2vw,24px);padding:clamp(14px,1.8vw,20px) 0;border-top:1px solid var(--ink-faint)}
+.plate .row.head{display:flex;justify-content:space-between;align-items:baseline;
+  border-top:none;border-bottom:2px solid var(--ink);padding-top:0}
+.plate .row.head + .row{border-top:none}
+.plate .pm{font-family:'Orbitron',var(--mono);font-size:clamp(18px,2vw,26px);letter-spacing:.12em}
+.plate .k{font-size:clamp(10px,1vw,12px)}
+.plate .mono{font-family:var(--mono);font-size:clamp(13px,1.3vw,18px);line-height:1.6;letter-spacing:.04em;min-height:3.2em}
+
+.record .line{position:relative;height:2px;background:var(--ink);margin:0 6px 26px}
 .record .st{position:absolute;top:50%;transform:translate(-50%,-50%);
   width:11px;height:11px;border-radius:50%;background:var(--ink);transition:background var(--motion,160ms)}
 .record .st.on{background:var(--red)}
@@ -137,13 +150,12 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
 .record .st:first-child span{left:0;transform:none}
 .record .st:last-child span{left:auto;right:0;transform:none}
-.record .ctl{margin-top:clamp(52px,6vw,76px);display:flex;gap:8px;flex-wrap:wrap}
+.record .ctl{display:flex;gap:8px;flex-wrap:wrap}
 .record .ctl button{height:40px;padding:0 20px;border-radius:999px;border:1px solid var(--ink);
   background:none;color:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.2em;
   text-transform:uppercase;cursor:pointer;transition:background var(--motion,160ms),color var(--motion,160ms)}
 .record .ctl button:hover,.record .ctl button:focus-visible{background:var(--ink);color:var(--paper);outline:none}
 .record .ctl button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.record .out{margin-top:clamp(16px,2vw,24px);min-height:3.6em}
 
 /* === CALL TO ACTION — page three, the carbon band ===================== */
 .flow{font-family:var(--mono);font-size:clamp(12px,1.3vw,18px);letter-spacing:.22em;
