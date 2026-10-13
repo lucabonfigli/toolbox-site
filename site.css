@@ -199,29 +199,49 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .rows .row.fade{-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%);
   mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%)}
 
-/* === THE PLATE — page three's frame: a chassis plate, yours is next ===== */
-.plate{position:relative;max-width:980px;border:2px solid currentColor;
-  padding:clamp(18px,3vh,36px) clamp(22px,3.4vw,44px) clamp(22px,3.6vh,44px)}
-.plate .rivet{position:absolute;width:9px;height:9px;border-radius:50%;border:1px solid currentColor}
-.plate .rivet.tl{top:8px;left:8px}   .plate .rivet.tr{top:8px;right:8px}
-.plate .rivet.bl{bottom:8px;left:8px} .plate .rivet.br{bottom:8px;right:8px}
-.plate .head{display:flex;justify-content:space-between;align-items:baseline;
-  border-bottom:2px solid currentColor;padding-bottom:clamp(10px,1.6vh,18px);margin-bottom:clamp(16px,3vh,36px)}
-.cta{padding:clamp(36px,6vh,100px) 0 clamp(72px,10vh,120px)}
-.plate h2{font-size:clamp(28px,min(4.8vw,7vh),76px)}
-.plate .pm{font-family:'Orbitron',var(--mono);font-size:clamp(18px,2vw,26px);letter-spacing:.12em}
+/* === THE GATE — page three: a five-speed gate, the five steps as gears ==== */
+.cta .wrap{display:grid;place-items:center}
+.flip{width:100%;max-width:880px;perspective:2400px}
+.card{display:grid;transform-style:preserve-3d;transition:transform 700ms var(--ease,ease)}
+.flip.on .card{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  display:flex;flex-direction:column;align-items:center;text-align:center}
+.back{transform:rotateY(180deg)}
+@media (prefers-reduced-motion:reduce){ .card{transition:none} }
 
-/* === CALL TO ACTION — page three, the carbon band ===================== */
-.flow{display:flex;flex-wrap:wrap;row-gap:.5em;font-family:var(--mono);font-size:clamp(12px,1.3vw,18px);letter-spacing:.22em;
-  text-transform:uppercase;margin-top:clamp(14px,2.6vh,36px)}
-.flow i{font-style:normal;color:var(--red);padding:0 .6em}
-.go{display:inline-flex;align-items:center;height:48px;padding:0 28px;margin-top:clamp(18px,3.4vh,48px);
-  border-radius:999px;background:var(--red);color:var(--paper);text-decoration:none;
-  font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+.gate{width:min(100%,640px);height:auto;margin-top:clamp(14px,2.4vh,28px);overflow:visible}
+/* the gate's channel: a wide paper stroke under a slightly narrower ground one */
+.gate .chan{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gate .chan.o{stroke:var(--paper);stroke-width:36}
+.gate .chan.i{stroke:var(--ink);stroke-width:34}
+.gate .gear{cursor:pointer;outline:none}
+.gate .gear rect{fill:transparent}
+.gate .gear text{fill:var(--paper);text-anchor:middle;opacity:.5;transition:opacity var(--motion,160ms)}
+.gate .gear .n{font-family:var(--display);font-size:34px}
+.gate .gear .s{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+.gate .gear:hover text,.gate .gear:focus-visible text,.gate .gear.on text{opacity:1}
+.gate .knob{fill:var(--red)}
+.step{min-height:1.6em;margin-top:clamp(8px,1.6vh,18px);font-family:var(--mono);
+  font-size:clamp(13px,1.3vw,18px);letter-spacing:.04em;color:rgba(239,235,225,.62)}
+
+/* the form, on the back */
+.back{align-items:stretch;text-align:left}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vh,28px) clamp(16px,2vw,28px);
+  margin-top:clamp(16px,3vh,32px)}
+.field{display:flex;flex-direction:column;gap:10px}
+.field.wide{grid-column:1 / -1}
+.field input,.field textarea{background:none;border:none;border-bottom:1px solid rgba(239,235,225,.4);
+  color:var(--paper);font-family:var(--mono);font-size:clamp(15px,1.3vw,18px);letter-spacing:.04em;
+  padding:8px 0;border-radius:0;outline:none;resize:vertical;transition:border-color var(--motion,160ms)}
+.field input:focus,.field textarea:focus{border-bottom-color:var(--red)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(12px,2vw,24px);margin-top:clamp(18px,3vh,36px)}
+.actions .go{margin-top:0;border:none;cursor:pointer}
+.quiet{height:48px;padding:0 24px;border-radius:999px;border:1px solid rgba(239,235,225,.4);background:none;
+  color:var(--paper);font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
   transition:background var(--motion,160ms),color var(--motion,160ms)}
-.go:hover,.go:focus-visible{background:var(--paper);color:var(--ink);outline:none}
-.cta{position:relative}
-.cta footer{position:absolute;left:0;right:0;bottom:0;padding:22px var(--pad) 28px}
+.quiet:hover,.quiet:focus-visible{background:var(--paper);color:var(--ink);outline:none}
+.status{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:rgba(239,235,225,.62)}
+@media (max-width:720px){ .fields{grid-template-columns:1fr} }
 
 /* reveal state — set by script, cleared on intersect */
 [data-rise]{opacity:0}

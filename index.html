@@ -14,7 +14,7 @@
 
 <nav>
   <span class="mk">toolbox</span>
-  <a class="to" href="#start">Submit a tool</a>
+  <a class="to" href="#start" data-open>Submit a tool</a>
 </nav>
 
 <!-- ============================ 1 → 2 · THE POINT, BECOMING THE STORY ============================
@@ -84,31 +84,54 @@
   </div>
 </section>
 
-<!-- ============================ 3 · THE ACTION (dark) ============================ -->
+<!-- ============================ 3 · THE ACTION (dark) ============================
+     A five-speed gate: the five steps are the five gears, the knob sits in
+     first. Submit flips the panel to the form. -->
 <section class="dark page cta" id="start">
   <div class="wrap">
-    <div class="plate" data-rise>
-      <i class="rivet tl"></i><i class="rivet tr"></i><i class="rivet bl"></i><i class="rivet br"></i>
-      <div class="head"><span class="pm">toolbox</span><span class="caps">No. 002</span></div>
-      <h2>
-        <span class="ln">What would you</span>
-        <span class="ln">build first?</span>
-      </h2>
-      <p class="flow">Submit<i>→</i>Assess<i>→</i>Build<i>→</i>Deploy<i>→</i>Deliver</p>
-      <a class="go" href="mailto:hello@toolbox.example">Submit a tool</a>
+    <div class="flip" data-flip>
+      <div class="card">
+
+        <div class="face front">
+          <p class="caps soft">What would you build first?</p>
+          <svg class="gate" viewBox="0 0 640 400" role="group" aria-label="How it goes">
+            <path class="chan o" d="M110 82 V318 M320 82 V318 M530 82 V200 M110 200 H530"/>
+            <path class="chan i" d="M110 82 V318 M320 82 V318 M530 82 V200 M110 200 H530"/>
+            <g class="gear" data-gear="1" tabindex="0" role="button" aria-label="1, Submit"><rect x="60" y="0" width="100" height="130"/><text class="n" x="110" y="44">1</text><text class="s" x="110" y="64">Submit</text></g>
+            <g class="gear" data-gear="2" tabindex="0" role="button" aria-label="2, Assess"><rect x="60" y="270" width="100" height="130"/><text class="n" x="110" y="368">2</text><text class="s" x="110" y="388">Assess</text></g>
+            <g class="gear" data-gear="3" tabindex="0" role="button" aria-label="3, Build"><rect x="270" y="0" width="100" height="130"/><text class="n" x="320" y="44">3</text><text class="s" x="320" y="64">Build</text></g>
+            <g class="gear" data-gear="4" tabindex="0" role="button" aria-label="4, Deploy"><rect x="270" y="270" width="100" height="130"/><text class="n" x="320" y="368">4</text><text class="s" x="320" y="388">Deploy</text></g>
+            <g class="gear" data-gear="5" tabindex="0" role="button" aria-label="5, Deliver"><rect x="480" y="0" width="100" height="130"/><text class="n" x="530" y="44">5</text><text class="s" x="530" y="64">Deliver</text></g>
+            <circle class="knob" r="16" cx="110" cy="92"/>
+          </svg>
+          <p class="mono step" aria-live="polite"></p>
+          <button class="go" type="button" data-open>Submit a tool</button>
+        </div>
+
+        <form class="face back" data-form novalidate>
+          <p class="caps soft">Submit a tool</p>
+          <div class="fields">
+            <label class="field"><span class="caps soft">Name</span><input name="name" autocomplete="name" required></label>
+            <label class="field"><span class="caps soft">Company</span><input name="company" autocomplete="organization" required></label>
+            <label class="field"><span class="caps soft">Email</span><input name="email" type="email" autocomplete="email" required></label>
+            <label class="field wide"><span class="caps soft">The work, and what it should produce</span><textarea name="work" rows="4" required></textarea></label>
+          </div>
+          <div class="actions">
+            <button class="go" type="submit">Send</button>
+            <button class="quiet" type="button" data-close>Back</button>
+            <p class="mono status" aria-live="polite"></p>
+          </div>
+        </form>
+
+      </div>
     </div>
   </div>
-  <footer>
-    <div class="split">
-      <span class="caps soft">toolbox</span>
-      <span class="caps soft">Build with toolbox</span>
-    </div>
-  </footer>
 </section>
 
 <script src="vendor/anime.umd.min.js"></script>
 <script src="site.js"></script>
 <script src="scene.js"></script>
 <script src="hole.js"></script>
+<script src="gate.js"></script>
 </body>
 </html>
