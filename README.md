@@ -14,13 +14,11 @@ holding what it produced and who ran it. The tools are built for you.
 
 ## The problem
 
-In a bespoke manufacturer, the work that wins an order and the work that
-fulfils it live in different systems. The CRM does not know what a bill of
-materials is. The ERP does not know a customer was ever spoken to.
+Software moved. Your systems didn't.
 
-Everything between them — the configuration, the quote, the renders, the
-promises made — lives in spreadsheets and inboxes. The order reaches the
-factory as a name and a date, and the reasoning behind it is gone.
+A CRM bought in 2019. An ERP set up by someone who left. An accounts package
+that exports spreadsheets. Your business bends around the gaps between them
+every day and calls it normal.
 
 Toolbox is the record that spans the gap, and the tools that hang from it.
 
@@ -71,7 +69,8 @@ written for one workshop's work, and it ships when that work needs it.
 
 ## Where AI is used
 
-Where it earns its place, and nowhere else.
+The software of the last era is static, and a workshop is not. AI is what
+fits the one to the other: the tools bend to how you really work.
 
 - **Configure with AI** — a car described in words, turned into a priced
   configuration.
@@ -99,7 +98,7 @@ composites and hydrographics — on one install, with thirty tools declared.
 - A few dozen units a year, each carrying dozens of jobs.
 - Tens of people, not thousands.
 - An ERP and a CRM already in place.
-- Coachbuilders, restomods, marine, composites, specialist finishes.
+- Boutique automotive: coachbuilders and restomods first.
 
 ## Talk to us
 

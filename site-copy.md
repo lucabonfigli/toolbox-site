@@ -24,12 +24,11 @@ names hidden.
 
 ## 2 · The gap
 
-**Headline:** The order reaches the factory as a name and a date.
+**Headline:** Software moved. Your systems didn't.
 
-**Body:** Sales configures, quotes and promises in one system. The factory
-builds in another. The CRM does not know a bill of materials; the ERP does not
-know a customer was ever spoken to. Everything between them lives in
-spreadsheets and inboxes.
+**Body:** A CRM bought in 2019. An ERP set up by someone who left. An accounts
+package that exports spreadsheets. Your business bends around the gaps between
+them every day and calls it normal.
 
 **Line:** Toolbox is the record that spans the gap.
 
@@ -94,8 +93,9 @@ open record is not offered.
 
 **Headline:** We are not an AI company, but we do use AI.
 
-**Body:** A model is used where it saves real time, and every output is kept
-with who asked and when.
+**Body:** The software of the last era is static, and a workshop is not. AI is
+what fits the one to the other: the tools bend to how you really work, and
+every output is kept, with who asked and when.
 
 - **Configure with AI** — a car described in words, priced.
 - **Lead research** — a briefing before the first call.
@@ -142,7 +142,7 @@ thirty tools declared.
 - Tens of people, not thousands.
 - An ERP and a CRM already in place.
 
-**For:** coachbuilders · restomods · marine · composites · specialist finishes
+**For:** boutique automotive · coachbuilders · restomods
 
 ---
 
