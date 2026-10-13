@@ -156,6 +156,11 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .slab .id{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:6px 18px;margin-bottom:calc(var(--bp) * .7)}
 .slab .caps{font-size:var(--bt)}
 .slab .mono{font-family:var(--mono);font-size:var(--bt);letter-spacing:.04em}
+/* the note is pulled, not pushed: it shows on hover and on focus, in its place */
+.slab .id .mono{opacity:0;transition:opacity var(--motion,160ms) var(--ease,ease)}
+.slab:hover .id .mono,.slab:focus-visible .id .mono{opacity:1}
+.slab:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+@media (hover:none){ .slab .id .mono{opacity:1} }
 .slab .hatch{display:block;height:clamp(20px,3vw,46px);margin:auto calc(-1 * var(--bp)) 0;
   border-top:1px solid var(--ink-faint);
   background:repeating-linear-gradient(135deg,var(--ink-faint) 0 1px,transparent 1px 6px)}
