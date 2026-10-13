@@ -176,7 +176,12 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 }
 
 /* === THE STANCE — the first edition's ruled rows: a tool against an agent */
-.stance{margin-bottom:clamp(18px,3.4vh,48px)}
+.stance{flex:1 1 380px;max-width:640px}
+/* on the point, under the rule: the slogan, and the stance beside it */
+.foot-row{align-items:flex-start;margin-top:clamp(16px,2.4vh,28px)}
+.foot-row .hero-slogan{margin-top:0}
+.foot-row .rows .row p{font-size:clamp(16px,min(1.9vw,3.2vh),30px)}
+.foot-row .rows .row .r{font-size:clamp(12px,min(1.1vw,2vh),17px)}
 .rows{margin-top:clamp(14px,2vw,22px)}
 .rows .row{border-top:2px solid currentColor;padding:clamp(10px,1.8vh,22px) 0}
 .rows .row p{font-family:var(--display);font-weight:400;text-transform:uppercase;
@@ -200,7 +205,7 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .plate .pm{font-family:'Orbitron',var(--mono);font-size:clamp(18px,2vw,26px);letter-spacing:.12em}
 
 /* === CALL TO ACTION — page three, the carbon band ===================== */
-.flow{font-family:var(--mono);font-size:clamp(12px,1.3vw,18px);letter-spacing:.22em;
+.flow{display:flex;flex-wrap:wrap;row-gap:.5em;font-family:var(--mono);font-size:clamp(12px,1.3vw,18px);letter-spacing:.22em;
   text-transform:uppercase;margin-top:clamp(14px,2.6vh,36px)}
 .flow i{font-style:normal;color:var(--red);padding:0 .6em}
 .go{display:inline-flex;align-items:center;height:48px;padding:0 28px;margin-top:clamp(18px,3.4vh,48px);
