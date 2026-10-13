@@ -64,6 +64,7 @@
   </p>
 
   <div class="bridge" data-bridge data-rise>
+    <svg class="wires" aria-hidden="true"></svg>
     <p class="caps soft era">Then</p>
     <p class="caps soft era now">Now</p>
 
@@ -73,17 +74,7 @@
       <div class="slab"><p class="caps">Accounts</p><p class="mono soft">exports spreadsheets</p><i class="hatch"></i></div>
     </div>
 
-    <svg class="wire in" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 16.7 C 55 16.7 45 50 100 50"/><path d="M0 50 H 100"/><path d="M0 83.3 C 55 83.3 45 50 100 50"/>
-    </svg>
-
-    <div class="node"><i class="dot"></i><span class="pm">toolbox</span></div>
-
-    <svg class="wire out" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-      <path data-kind="create" d="M0 50 C 55 50 45 16.7 100 16.7"/>
-      <path data-kind="analyse" d="M0 50 H 100"/>
-      <path data-kind="operate" d="M0 50 C 55 50 45 83.3 100 83.3"/>
-    </svg>
+    <div class="node"><span class="pm" data-wm>tool<span class="b">b</span>ox</span></div>
 
     <div class="kinds" role="group" aria-label="Tools">
       <button type="button" class="kind" data-kind="create" aria-pressed="true"><i class="dot"></i><span class="caps">Create</span><span class="mono soft">quotes · documents</span></button>
