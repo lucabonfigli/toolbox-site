@@ -52,54 +52,61 @@
   </div>
 </header>
 
-<!-- ============================ 2 · THE EXAMPLE ============================ -->
+<!-- ============================ 2 · THE STORY ============================ -->
 <section class="wrap page">
-  <div class="split">
-    <p class="caps soft" data-scramble>Software moved</p>
-    <p class="caps soft" data-scramble>Your systems didn't</p>
-  </div>
-  <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>One record,</span>
-    <span class="ln" data-rise>quote to delivery.</span>
+  <h2>
+    <span class="ln" data-rise>Your software set hard.</span>
+    <span class="ln" data-rise>Toolbox reads it.</span>
   </h2>
   <p class="lede" style="margin-top:clamp(16px,2.4vw,28px)" data-rise>
-    A CRM bought in 2019. An ERP set up by someone who left. An accounts package
-    that exports spreadsheets. Your business bends around the gaps between them
-    every day and calls it normal.
+    Toolbox sits on top of the production software you already run, and uses AI
+    to make sense of everything built up inside it.
   </p>
 
-  <div class="record plate" data-record data-rise>
-    <i class="rivet tl"></i><i class="rivet tr"></i><i class="rivet bl"></i><i class="rivet br"></i>
-    <div class="row head"><span class="pm">toolbox</span><span class="caps">No. 001</span></div>
-    <div class="row"><span class="caps soft k">Record</span>
-      <div class="line">
-        <span class="st" data-kind="create" style="left:0"><span>Quote</span></span>
-        <span class="st" data-kind="analyse" style="left:50%"><span>Build</span></span>
-        <span class="st" data-kind="operate" style="left:100%"><span>Delivery</span></span>
-      </div>
+  <div class="bridge" data-bridge data-rise>
+    <p class="caps soft era">Then</p>
+    <p class="caps soft era now">Now</p>
+
+    <div class="slabs">
+      <div class="slab"><p class="caps">CRM</p><p class="mono soft">bought in 2019</p><i class="hatch"></i></div>
+      <div class="slab"><p class="caps">ERP</p><p class="mono soft">set up by someone who left</p><i class="hatch"></i></div>
+      <div class="slab"><p class="caps">Accounts</p><p class="mono soft">exports spreadsheets</p><i class="hatch"></i></div>
     </div>
-    <div class="row"><span class="caps soft k">Tools</span>
-      <div class="ctl" role="group" aria-label="Tools">
-        <button type="button" data-kind="create" aria-pressed="true">Create</button>
-        <button type="button" data-kind="analyse" aria-pressed="false">Analyse</button>
-        <button type="button" data-kind="operate" aria-pressed="false">Operate</button>
-      </div>
-    </div>
-    <div class="row"><span class="caps soft k">Makes</span>
-      <p class="mono out" aria-live="polite"></p>
+
+    <svg class="wire in" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 16.7 C 55 16.7 45 50 100 50"/><path d="M0 50 H 100"/><path d="M0 83.3 C 55 83.3 45 50 100 50"/>
+    </svg>
+
+    <div class="node"><i class="dot"></i><span class="pm">toolbox</span></div>
+
+    <svg class="wire out" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path data-kind="create" d="M0 50 C 55 50 45 16.7 100 16.7"/>
+      <path data-kind="analyse" d="M0 50 H 100"/>
+      <path data-kind="operate" d="M0 50 C 55 50 45 83.3 100 83.3"/>
+    </svg>
+
+    <div class="kinds" role="group" aria-label="Tools">
+      <button type="button" class="kind" data-kind="create" aria-pressed="true"><i class="dot"></i><span class="caps">Create</span><span class="mono soft">quotes · documents</span></button>
+      <button type="button" class="kind" data-kind="analyse" aria-pressed="false"><i class="dot"></i><span class="caps">Analyse</span><span class="mono soft">audits · reports</span></button>
+      <button type="button" class="kind" data-kind="operate" aria-pressed="false"><i class="dot"></i><span class="caps">Operate</span><span class="mono soft">job cards · handover</span></button>
     </div>
   </div>
+  <p class="mono tools" aria-live="polite"></p>
 </section>
 
 <!-- ============================ 3 · THE ACTION (dark) ============================ -->
 <section class="dark page cta" id="start">
   <div class="wrap">
-    <h2>
-      <span class="ln" data-rise>What would you</span>
-      <span class="ln" data-rise>build first?</span>
-    </h2>
-    <p class="flow" data-rise>Submit<i>→</i>Assess<i>→</i>Build<i>→</i>Deploy<i>→</i>Deliver</p>
-    <a class="go" href="mailto:hello@toolbox.example" data-rise>Submit a tool</a>
+    <div class="plate" data-rise>
+      <i class="rivet tl"></i><i class="rivet tr"></i><i class="rivet bl"></i><i class="rivet br"></i>
+      <div class="head"><span class="pm">toolbox</span><span class="caps">No. 002</span></div>
+      <h2>
+        <span class="ln">What would you</span>
+        <span class="ln">build first?</span>
+      </h2>
+      <p class="flow">Submit<i>→</i>Assess<i>→</i>Build<i>→</i>Deploy<i>→</i>Deliver</p>
+      <a class="go" href="mailto:hello@toolbox.example">Submit a tool</a>
+    </div>
   </div>
   <footer>
     <div class="split">

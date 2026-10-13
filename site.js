@@ -49,21 +49,21 @@ var A = window.anime || {};
   });
 })();
 
-/* --- the record: pick a kind of tool, see where it sits and what it is --- */
+/* --- the story: pick what comes out, see which tools make it --- */
 (function () {
-  var rec = document.querySelector('[data-record]');
-  if (!rec) return;
+  var bridge = document.querySelector('[data-bridge]'), out = document.querySelector('.tools');
+  if (!bridge || !out) return;
   var TOOLS = {
     create:  'Configure & quote · Configure with AI · Specification document · Final quote · Email teaser · QR card · Listing sheet',
     analyse: 'Build audit · Ask the ERP · Lead research · Parts report · Labour report · Marketing report',
     operate: 'Job card · Pick list · Parts list · Handover · Commercial invoice'
   };
-  var buttons = rec.querySelectorAll('.ctl button'), out = rec.querySelector('.out');
+  var kinds = bridge.querySelectorAll('.kind');
   function pick(kind){
-    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.kind === kind)); });
-    rec.querySelectorAll('.st').forEach(function(st){ st.classList.toggle('on', st.dataset.kind === kind); });
+    kinds.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.kind === kind)); });
+    bridge.querySelectorAll('.wire.out path').forEach(function(p){ p.classList.toggle('on', p.dataset.kind === kind); });
     out.textContent = TOOLS[kind];
   }
-  buttons.forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.kind); }); });
+  kinds.forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.kind); }); });
   pick('create');
 })();

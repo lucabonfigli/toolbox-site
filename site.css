@@ -123,36 +123,66 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .dark .hair{background:rgba(239,235,225,.24)}
 .dark .soft{color:rgba(239,235,225,.55)}
 
-/* === THE RECORD — page two's example, framed as a chassis plate ========= */
-.plate{position:relative;margin-top:clamp(24px,4vw,48px);max-width:980px;
-  border:2px solid var(--ink);padding:clamp(18px,2.4vw,28px) clamp(20px,3vw,40px)}
-.plate .rivet{position:absolute;width:9px;height:9px;border-radius:50%;border:1px solid var(--ink)}
+/* === THE STORY — page two: the old systems, read, turned into work ====== */
+.bridge{display:grid;margin-top:clamp(24px,4vw,48px);align-items:stretch;
+  grid-template-columns:minmax(0,1fr) clamp(48px,9vw,140px) auto clamp(48px,9vw,140px) minmax(0,1fr);
+  grid-template-rows:auto auto}
+.bridge .era{grid-row:1;grid-column:1;margin-bottom:12px}
+.bridge .era.now{grid-column:5;text-align:right}
+.bridge .slabs,.bridge .kinds{grid-row:2;display:grid;grid-template-rows:repeat(3,1fr)}
+.bridge .slabs{grid-column:1}
+.bridge .kinds{grid-column:5}
+.bridge .wire{grid-row:2;width:100%;height:100%;overflow:visible}
+.bridge .wire.in{grid-column:2}
+.bridge .wire.out{grid-column:4}
+.bridge .wire path{fill:none;stroke:var(--ink);stroke-width:1;vector-effect:non-scaling-stroke;
+  transition:stroke var(--motion,160ms)}
+.bridge .wire path.on{stroke:var(--red)}
+.bridge .node{grid-row:2;grid-column:3;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:10px;padding:0 clamp(8px,1.4vw,18px)}
+.bridge .node .dot{width:13px;height:13px;border-radius:50%;background:var(--red)}
+.bridge .pm{font-family:'Orbitron',var(--mono);font-size:clamp(16px,1.8vw,24px);letter-spacing:.12em}
+
+/* a slab is a system that set hard: its name, then the years of data in it */
+.slab{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;
+  border:1px solid var(--ink);padding:10px 14px 0;margin:5px 0}
+.slab .caps{font-size:clamp(11px,1.1vw,14px)}
+.slab .mono{font-family:var(--mono);font-size:clamp(11px,1.05vw,14px);letter-spacing:.04em}
+.slab .hatch{flex-basis:100%;height:clamp(14px,1.8vw,22px);margin:8px -14px 0;
+  border-top:1px solid var(--ink-faint);
+  background:repeating-linear-gradient(135deg,var(--ink-faint) 0 1px,transparent 1px 6px)}
+
+.kind{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:5px 0;padding:10px 14px;
+  border:1px solid transparent;background:none;color:var(--ink);text-align:left;cursor:pointer;
+  font:inherit;transition:border-color var(--motion,160ms)}
+.kind .dot{width:9px;height:9px;border-radius:50%;background:var(--ink);transition:background var(--motion,160ms)}
+.kind .caps{font-size:clamp(11px,1.1vw,14px)}
+.kind .mono{flex-basis:100%;padding-left:21px;font-family:var(--mono);font-size:clamp(11px,1.05vw,14px);letter-spacing:.04em}
+.kind:hover,.kind:focus-visible{border-color:var(--ink);outline:none}
+.kind[aria-pressed="true"]{border-color:var(--ink)}
+.kind[aria-pressed="true"] .dot{background:var(--red)}
+
+.tools{margin-top:clamp(14px,2vw,22px);min-height:3.2em;text-align:right;
+  font-family:var(--mono);font-size:clamp(12px,1.2vw,16px);line-height:1.6;letter-spacing:.04em;color:var(--ink-soft)}
+
+@media (max-width:720px){
+  .bridge{grid-template-columns:1fr;grid-template-rows:none}
+  .bridge .era,.bridge .era.now,.bridge .slabs,.bridge .kinds,.bridge .node{grid-row:auto;grid-column:1;text-align:left}
+  .bridge .wire{display:none}
+  .bridge .node{flex-direction:row;justify-content:flex-start;padding:16px 0;border-left:1px solid var(--ink);margin-left:6px;padding-left:16px}
+  .bridge .era.now{margin-top:8px}
+  .tools{text-align:left}
+}
+
+/* === THE PLATE — page three's frame: a chassis plate, yours is next ===== */
+.plate{position:relative;max-width:980px;border:2px solid currentColor;
+  padding:clamp(20px,3vw,36px) clamp(22px,3.4vw,44px) clamp(26px,3.6vw,44px)}
+.plate .rivet{position:absolute;width:9px;height:9px;border-radius:50%;border:1px solid currentColor}
 .plate .rivet.tl{top:8px;left:8px}   .plate .rivet.tr{top:8px;right:8px}
 .plate .rivet.bl{bottom:8px;left:8px} .plate .rivet.br{bottom:8px;right:8px}
-.plate .row{display:grid;grid-template-columns:clamp(72px,10vw,120px) 1fr;align-items:center;
-  gap:clamp(12px,2vw,24px);padding:clamp(14px,1.8vw,20px) 0;border-top:1px solid var(--ink-faint)}
-.plate .row.head{display:flex;justify-content:space-between;align-items:baseline;
-  border-top:none;border-bottom:2px solid var(--ink);padding-top:0}
-.plate .row.head + .row{border-top:none}
+.plate .head{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:2px solid currentColor;padding-bottom:clamp(12px,1.6vw,18px);margin-bottom:clamp(20px,3vw,36px)}
 .plate .pm{font-family:'Orbitron',var(--mono);font-size:clamp(18px,2vw,26px);letter-spacing:.12em}
-.plate .k{font-size:clamp(10px,1vw,12px)}
-.plate .mono{font-family:var(--mono);font-size:clamp(13px,1.3vw,18px);line-height:1.6;letter-spacing:.04em;min-height:3.2em}
-
-.record .line{position:relative;height:2px;background:var(--ink);margin:0 6px 26px}
-.record .st{position:absolute;top:50%;transform:translate(-50%,-50%);
-  width:11px;height:11px;border-radius:50%;background:var(--ink);transition:background var(--motion,160ms)}
-.record .st.on{background:var(--red)}
-.record .st span{position:absolute;top:18px;left:50%;transform:translateX(-50%);
-  white-space:nowrap;font-family:var(--mono);font-size:clamp(10px,1vw,13px);
-  letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
-.record .st:first-child span{left:0;transform:none}
-.record .st:last-child span{left:auto;right:0;transform:none}
-.record .ctl{display:flex;gap:8px;flex-wrap:wrap}
-.record .ctl button{height:40px;padding:0 20px;border-radius:999px;border:1px solid var(--ink);
-  background:none;color:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.2em;
-  text-transform:uppercase;cursor:pointer;transition:background var(--motion,160ms),color var(--motion,160ms)}
-.record .ctl button:hover,.record .ctl button:focus-visible{background:var(--ink);color:var(--paper);outline:none}
-.record .ctl button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 
 /* === CALL TO ACTION — page three, the carbon band ===================== */
 .flow{font-family:var(--mono);font-size:clamp(12px,1.3vw,18px);letter-spacing:.22em;
