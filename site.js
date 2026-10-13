@@ -59,17 +59,17 @@ var A = window.anime || {};
   }
   kinds.forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.kind); }); });
 
-  /* The wires converge on the box: into the left of its front face, and out
-     of the right of its side face. They stop at its edges, never cross it. */
+  /* The wires converge on the box: into the middle of its left edge, and out
+     of the middle of its right edge. They stop there, never cross it. */
   var box3 = bridge.querySelector('[data-box]'), svg = bridge.querySelector('.wires');
   var NS = 'http://www.w3.org/2000/svg';
 
   function wire(){
     if (getComputedStyle(svg).display === 'none') return;
     var box = bridge.getBoundingClientRect();
-    var fr = box3.querySelector('.fr').getBoundingClientRect(), rt = box3.querySelector('.rt').getBoundingClientRect();
-    var ix = fr.left - box.left, iy = fr.top - box.top + fr.height / 2;
-    var ox = rt.right - box.left, oy = rt.top - box.top + rt.height / 2;
+    var pi = box3.querySelector('.pin.in').getBoundingClientRect(), po = box3.querySelector('.pin.out').getBoundingClientRect();
+    var ix = pi.left - box.left, iy = pi.top - box.top;
+    var ox = po.left - box.left, oy = po.top - box.top;
     var paths = [];
     bridge.querySelectorAll('.slab').forEach(function(sl){
       var r = sl.getBoundingClientRect(), x = r.right - box.left, y = r.top - box.top + r.height / 2;

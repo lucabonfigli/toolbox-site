@@ -142,6 +142,9 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   width:calc(520px * var(--tbx-s));height:calc(380px * var(--tbx-s))}
 /* the hero's box, small: one pose, centred on its own height (lid and handle included) */
 .tbx .b canvas{display:inline-block}
+/* where the wires meet the box: the middle of its left edge, and of its right */
+.tbx .pin{position:absolute;top:50%;width:0;height:0}
+.tbx .pin.in{left:0} .tbx .pin.out{right:0}
 .bridge .node .tbx{position:absolute;left:50%;top:50%;
   transform:translateY(calc(81px * var(--tbx-s))) scale(var(--tbx-s)) rotateX(-12deg) rotateY(-26deg)}
 @media (max-width:1100px){ .bridge .node{--tbx-s:.36} }
