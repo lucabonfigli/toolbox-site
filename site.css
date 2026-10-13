@@ -115,13 +115,9 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   font-family:'Orbitron',var(--mono);font-size:52px;letter-spacing:.06em;color:var(--ink)}
 
 .hero-foot{width:100%;margin-top:clamp(20px,4vw,44px)}
-.hero-mk{font-family:'Orbitron',var(--mono);font-size:clamp(38px,8vw,104px);
-  letter-spacing:.06em;text-transform:lowercase;line-height:1}
-.hero-slogan{font-family:var(--mono);font-weight:400;font-size:clamp(11px,1.15vw,17px);
-  letter-spacing:.18em;text-transform:uppercase;line-height:1;text-align:right;
-  /* three lines spread over the wordmark's own height: top with its ascenders, last with its baseline */
-  display:flex;flex-direction:column;justify-content:space-between;padding:.35em 0 .3em}
-@media (max-width:720px){ .hero-slogan{text-align:left;gap:.6em;padding:0} }
+.hero-slogan{margin-top:clamp(16px,2.4vh,28px);font-family:var(--mono);font-weight:400;
+  font-size:clamp(15px,2vw,30px);letter-spacing:.18em;text-transform:uppercase;line-height:1.5}
+.hero-slogan span{display:block}
 /* === DARK BAND ========================================================== */
 .dark{background:var(--ink);color:var(--paper)}
 .dark .lede{color:rgba(239,235,225,.62)}
