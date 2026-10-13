@@ -125,7 +125,8 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 
 /* === THE STORY — page two: the old systems, read, turned into work ====== */
 .bridge{display:grid;align-items:stretch;
-  grid-template-columns:minmax(0,1fr) clamp(48px,9vw,140px) auto clamp(48px,9vw,140px) minmax(0,1fr);
+  grid-template-columns:minmax(0,1fr) clamp(40px,7vw,150px) auto clamp(40px,7vw,150px) minmax(0,1fr);
+  --bp:clamp(14px,1.7vw,26px);--bt:clamp(13px,1.45vw,21px)
 }
 .bridge .slabs,.bridge .kinds{display:grid;grid-template-rows:repeat(3,1fr)}
 .bridge .slabs{grid-column:1}
@@ -137,30 +138,30 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .bridge .wires path{fill:none;stroke:var(--ink);stroke-width:1;transition:stroke var(--motion,160ms)}
 .bridge .wires path.on{stroke:var(--red)}
 .bridge .node{grid-column:3;position:relative;z-index:1;align-self:center;
-  --tbx-s:.3;perspective:2200px;
+  --tbx-s:.52;perspective:2200px;
   width:calc(520px * var(--tbx-s));height:calc(380px * var(--tbx-s))}
 /* the hero's box, small: one pose, centred on its own height (lid and handle included) */
 .tbx .b canvas{display:inline-block}
 .bridge .node .tbx{position:absolute;left:50%;top:50%;
   transform:translateY(calc(81px * var(--tbx-s))) scale(var(--tbx-s)) rotateX(-12deg) rotateY(-26deg)}
-@media (max-width:1100px){ .bridge .node{--tbx-s:.24} }
+@media (max-width:1100px){ .bridge .node{--tbx-s:.36} }
 .bridge .slabs,.bridge .kinds{position:relative;z-index:1;background:none}
 .slab{background:var(--paper)}
 /* a slab is a system that set hard: its name, then the years of data in it */
-.slab{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;
-  border:1px solid var(--ink);padding:10px 14px 0;margin:5px 0}
-.slab .caps{font-size:clamp(11px,1.1vw,14px)}
-.slab .mono{font-family:var(--mono);font-size:clamp(11px,1.05vw,14px);letter-spacing:.04em}
-.slab .hatch{flex-basis:calc(100% + 28px);height:clamp(14px,1.8vw,22px);margin:8px -14px 0;
+.slab{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;
+  border:1px solid var(--ink);padding:var(--bp) var(--bp) 0;margin:clamp(6px,.8vw,12px) 0}
+.slab .caps{font-size:var(--bt)}
+.slab .mono{font-family:var(--mono);font-size:var(--bt);letter-spacing:.04em}
+.slab .hatch{flex-basis:calc(100% + 2 * var(--bp));height:clamp(20px,3vw,46px);margin:calc(var(--bp) * .7) calc(-1 * var(--bp)) 0;
   border-top:1px solid var(--ink-faint);
   background:repeating-linear-gradient(135deg,var(--ink-faint) 0 1px,transparent 1px 6px)}
 
-.kind{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:5px 0;padding:10px 14px;
+.kind{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:clamp(6px,.8vw,12px) 0;padding:var(--bp);
   border:1px solid transparent;background:none;color:var(--ink);text-align:left;cursor:pointer;
   font:inherit;transition:border-color var(--motion,160ms)}
-.kind .dot{width:9px;height:9px;border-radius:50%;background:var(--ink);transition:background var(--motion,160ms)}
-.kind .caps{font-size:clamp(11px,1.1vw,14px)}
-.kind .mono{flex-basis:100%;padding-left:21px;font-family:var(--mono);font-size:clamp(11px,1.05vw,14px);letter-spacing:.04em}
+.kind .dot{width:12px;height:12px;border-radius:50%;background:var(--ink);transition:background var(--motion,160ms)}
+.kind .caps{font-size:var(--bt)}
+.kind .mono{flex-basis:100%;padding-left:26px;font-family:var(--mono);font-size:var(--bt);letter-spacing:.04em}
 .kind:hover,.kind:focus-visible{border-color:var(--ink);outline:none}
 .kind[aria-pressed="true"]{border-color:var(--ink)}
 .kind[aria-pressed="true"] .dot{background:var(--red)}
