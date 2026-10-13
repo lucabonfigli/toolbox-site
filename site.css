@@ -175,7 +175,7 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   .bridge .node{justify-self:start;margin:12px 0}
 }
 
-/* === THE STANCE — the first edition's ruled rows: a tool against a chat box */
+/* === THE STANCE — the first edition's ruled rows: a tool against an agent */
 .stance{margin-bottom:clamp(18px,3.4vh,48px)}
 .rows{margin-top:clamp(14px,2vw,22px)}
 .rows .row{border-top:2px solid currentColor;padding:clamp(10px,1.8vh,22px) 0}
