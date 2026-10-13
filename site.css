@@ -67,7 +67,7 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 
 /* === HERO =============================================================== */
 /* the point and the story share one held screen; scene.js moves the box */
-.scene{position:relative;height:200svh}
+.scene{position:relative;height:200svh;padding:0}
 .scene .snap{position:absolute;left:0;width:1px;height:1px;scroll-snap-align:start}
 .stage{position:sticky;top:0;height:100svh;overflow:hidden;perspective:2200px}
 .layer{position:absolute;inset:0;display:grid;place-items:center}
