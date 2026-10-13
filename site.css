@@ -126,10 +126,8 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 /* === THE STORY — page two: the old systems, read, turned into work ====== */
 .bridge{display:grid;align-items:stretch;
   grid-template-columns:minmax(0,1fr) clamp(48px,9vw,140px) auto clamp(48px,9vw,140px) minmax(0,1fr);
-  grid-template-rows:auto auto}
-.bridge .era{grid-row:1;grid-column:1;margin-bottom:12px}
-.bridge .era.now{grid-column:5;text-align:right}
-.bridge .slabs,.bridge .kinds{grid-row:2;display:grid;grid-template-rows:repeat(3,1fr)}
+}
+.bridge .slabs,.bridge .kinds{display:grid;grid-template-rows:repeat(3,1fr)}
 .bridge .slabs{grid-column:1}
 .bridge .kinds{grid-column:5}
 /* the wires are drawn by site.js, from each system into the box and out of
@@ -138,7 +136,7 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .bridge .wires{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
 .bridge .wires path{fill:none;stroke:var(--ink);stroke-width:1;transition:stroke var(--motion,160ms)}
 .bridge .wires path.on{stroke:var(--red)}
-.bridge .node{grid-row:2;grid-column:3;position:relative;z-index:1;align-self:center;
+.bridge .node{grid-column:3;position:relative;z-index:1;align-self:center;
   --tbx-s:.3;perspective:2200px;
   width:calc(520px * var(--tbx-s));height:calc(380px * var(--tbx-s))}
 /* the hero's box, small: one pose, centred on its own height (lid and handle included) */
@@ -169,10 +167,9 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 
 @media (max-width:720px){
   .bridge{grid-template-columns:1fr;grid-template-rows:none}
-  .bridge .era,.bridge .era.now,.bridge .slabs,.bridge .kinds,.bridge .node{grid-row:auto;grid-column:1;text-align:left}
+  .bridge .slabs,.bridge .kinds,.bridge .node{grid-column:1;text-align:left}
   .bridge .wires{display:none}
   .bridge .node{justify-self:start;margin:12px 0}
-  .bridge .era.now{margin-top:8px}
 }
 
 /* === THE PLATE — page three's frame: a chassis plate, yours is next ===== */
