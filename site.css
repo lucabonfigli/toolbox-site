@@ -179,21 +179,35 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   .bridge .node{justify-self:start;margin:12px 0}
 }
 
+/* === THE STANCE — the first edition's ruled rows: a tool against a chat box */
+.stance{margin-bottom:clamp(18px,3.4vh,48px)}
+.rows{margin-top:clamp(14px,2vw,22px)}
+.rows .row{border-top:2px solid currentColor;padding:clamp(10px,1.8vh,22px) 0}
+.rows .row p{font-family:var(--display);font-weight:400;text-transform:uppercase;
+  font-size:clamp(19px,min(2.6vw,4.2vh),40px);line-height:1;letter-spacing:.01em}
+.rows .row .t{color:var(--red)}
+.rows .row .r{font-family:var(--mono);text-transform:none;letter-spacing:.04em;
+  font-size:clamp(13px,1.3vw,19px);line-height:1.5}
+.rows .row.fade{-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%);
+  mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%)}
+
 /* === THE PLATE — page three's frame: a chassis plate, yours is next ===== */
 .plate{position:relative;max-width:980px;border:2px solid currentColor;
-  padding:clamp(20px,3vw,36px) clamp(22px,3.4vw,44px) clamp(26px,3.6vw,44px)}
+  padding:clamp(18px,3vh,36px) clamp(22px,3.4vw,44px) clamp(22px,3.6vh,44px)}
 .plate .rivet{position:absolute;width:9px;height:9px;border-radius:50%;border:1px solid currentColor}
 .plate .rivet.tl{top:8px;left:8px}   .plate .rivet.tr{top:8px;right:8px}
 .plate .rivet.bl{bottom:8px;left:8px} .plate .rivet.br{bottom:8px;right:8px}
 .plate .head{display:flex;justify-content:space-between;align-items:baseline;
-  border-bottom:2px solid currentColor;padding-bottom:clamp(12px,1.6vw,18px);margin-bottom:clamp(20px,3vw,36px)}
+  border-bottom:2px solid currentColor;padding-bottom:clamp(10px,1.6vh,18px);margin-bottom:clamp(16px,3vh,36px)}
+.cta{padding:clamp(36px,6vh,100px) 0 clamp(72px,10vh,120px)}
+.plate h2{font-size:clamp(28px,min(4.8vw,7vh),76px)}
 .plate .pm{font-family:'Orbitron',var(--mono);font-size:clamp(18px,2vw,26px);letter-spacing:.12em}
 
 /* === CALL TO ACTION — page three, the carbon band ===================== */
 .flow{font-family:var(--mono);font-size:clamp(12px,1.3vw,18px);letter-spacing:.22em;
-  text-transform:uppercase;margin-top:clamp(20px,3vw,36px)}
+  text-transform:uppercase;margin-top:clamp(14px,2.6vh,36px)}
 .flow i{font-style:normal;color:var(--red);padding:0 .6em}
-.go{display:inline-flex;align-items:center;height:48px;padding:0 28px;margin-top:clamp(28px,4vw,48px);
+.go{display:inline-flex;align-items:center;height:48px;padding:0 28px;margin-top:clamp(18px,3.4vh,48px);
   border-radius:999px;background:var(--red);color:var(--paper);text-decoration:none;
   font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
   transition:background var(--motion,160ms),color var(--motion,160ms)}
