@@ -124,7 +124,7 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .dark .soft{color:rgba(239,235,225,.55)}
 
 /* === THE STORY — page two: the old systems, read, turned into work ====== */
-.bridge{display:grid;margin-top:clamp(24px,4vw,48px);align-items:stretch;
+.bridge{display:grid;align-items:stretch;
   grid-template-columns:minmax(0,1fr) clamp(48px,9vw,140px) auto clamp(48px,9vw,140px) minmax(0,1fr);
   grid-template-rows:auto auto}
 .bridge .era{grid-row:1;grid-column:1;margin-bottom:12px}
@@ -150,7 +150,7 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   border:1px solid var(--ink);padding:10px 14px 0;margin:5px 0}
 .slab .caps{font-size:clamp(11px,1.1vw,14px)}
 .slab .mono{font-family:var(--mono);font-size:clamp(11px,1.05vw,14px);letter-spacing:.04em}
-.slab .hatch{flex-basis:100%;height:clamp(14px,1.8vw,22px);margin:8px -14px 0;
+.slab .hatch{flex-basis:calc(100% + 28px);height:clamp(14px,1.8vw,22px);margin:8px -14px 0;
   border-top:1px solid var(--ink-faint);
   background:repeating-linear-gradient(135deg,var(--ink-faint) 0 1px,transparent 1px 6px)}
 
@@ -164,16 +164,12 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .kind[aria-pressed="true"]{border-color:var(--ink)}
 .kind[aria-pressed="true"] .dot{background:var(--red)}
 
-.tools{margin-top:clamp(14px,2vw,22px);min-height:3.2em;text-align:right;
-  font-family:var(--mono);font-size:clamp(12px,1.2vw,16px);line-height:1.6;letter-spacing:.04em;color:var(--ink-soft)}
-
 @media (max-width:720px){
   .bridge{grid-template-columns:1fr;grid-template-rows:none}
   .bridge .era,.bridge .era.now,.bridge .slabs,.bridge .kinds,.bridge .node{grid-row:auto;grid-column:1;text-align:left}
   .bridge .wires{display:none}
   .bridge .node{justify-content:flex-start;padding:16px 0 16px 16px;border-left:1px solid var(--ink);margin-left:6px}
   .bridge .era.now{margin-top:8px}
-  .tools{text-align:left}
 }
 
 /* === THE PLATE — page three's frame: a chassis plate, yours is next ===== */

@@ -49,19 +49,13 @@ var A = window.anime || {};
   });
 })();
 
-/* --- the story: pick what comes out, see which tools make it --- */
+/* --- the story: pick what comes out, and its wire lights --- */
 (function () {
-  var bridge = document.querySelector('[data-bridge]'), out = document.querySelector('.tools');
-  if (!bridge || !out) return;
-  var TOOLS = {
-    create:  'Configure & quote · Configure with AI · Specification document · Final quote · Email teaser · QR card · Listing sheet',
-    analyse: 'Build audit · Ask the ERP · Lead research · Parts report · Labour report · Marketing report',
-    operate: 'Job card · Pick list · Parts list · Handover · Commercial invoice'
-  };
+  var bridge = document.querySelector('[data-bridge]');
+  if (!bridge) return;
   var kinds = bridge.querySelectorAll('.kind');
   function pick(kind){
     kinds.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.kind === kind)); });
-    out.textContent = TOOLS[kind];
   }
   kinds.forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.kind); }); });
 
