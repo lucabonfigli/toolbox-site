@@ -1,46 +1,25 @@
 /* ===========================================================================
-   MOTION — the first edition's, unchanged.
-   Restrained on purpose. Scroll drives the mark directly; everything else
-   reveals once, on entry, and then stays put.
+   MOTION
+   The mark holds still: 3D, one pose, no rotation. It is only fitted to the
+   stage. Everything else reveals once, on entry, and then stays put.
    =========================================================================== */
 var A = window.anime || {};
 
-/* --- the mark: fit to viewport, then rotate away as the hero leaves --- */
+/* --- the mark: fit to the stage, nothing more --- */
 (function () {
-  var stage = document.getElementById('tbxStage'), obj = document.getElementById('tbx');
-  if (!stage || !obj) return;
-
+  var stage = document.getElementById('tbxStage');
+  if (!stage) return;
   function fit(){
     /* the object is authored at ~640px wide; scale it to the stage */
     var s = Math.min(stage.clientWidth / 760, stage.clientHeight / 520, 1.35);
     document.documentElement.style.setProperty('--tbx-s', Math.max(0.42, s).toFixed(3));
   }
   fit(); addEventListener('resize', fit, {passive:true});
-
-  var hero = document.querySelector('.hero'), ticking = false;
-  function frame(){
-    ticking = false;
-    var h = hero.offsetHeight;
-    var p = Math.min(1, Math.max(0, scrollY / h));          /* 0 at top, 1 when hero has left */
-    var s = getComputedStyle(document.documentElement).getPropertyValue('--tbx-s') || 1;
-    /* Rotation stops well short of 90deg, so the box stays dimensional the
-       whole way out; rotateX deepens to keep three faces in view. */
-    obj.style.transform =
-      'translateY(' + (70 - p * 150) + 'px) scale(' + (parseFloat(s) * (1 - p * 0.18)) + ') ' +
-      'rotateX(' + (-12 - p * 16) + 'deg) rotateY(' + (-26 - p * 46) + 'deg)';
-    obj.style.opacity = (1 - p * 0.8).toFixed(3);
-    var co = document.querySelector('[data-callouts]');
-    if (co) co.style.opacity = (1 - Math.min(1, p * 2.4)).toFixed(3);
-  }
-  addEventListener('scroll', function(){
-    if (!ticking) { ticking = true; requestAnimationFrame(frame); }
-  }, {passive:true});
-  frame();
 })();
 
 /* --- reveal on entry: rules draw, labels assemble, copy rises --- */
 (function () {
-  var animate = A.animate, scrambleText = A.scrambleText, stagger = A.stagger;
+  var animate = A.animate, scrambleText = A.scrambleText;
 
   function reveal(el){
     if (el.dataset.done) return;
@@ -66,31 +45,25 @@ var A = window.anime || {};
   }, { rootMargin:'0px 0px -12% 0px', threshold:0.15 });
 
   document.querySelectorAll('[data-draw],[data-scramble],[data-rise]').forEach(function(el){
-    if (!el.hasAttribute('data-onscroll')) io.observe(el);
+    io.observe(el);
   });
+})();
 
-  /* These sit in the first viewport, so revealing them on intersection would
-     mean revealing them on load. They wait for the first real scroll. */
-  var gated = [].slice.call(document.querySelectorAll('[data-onscroll]'));
-  function releaseGated(){
-    if (scrollY < 30) return;
-    gated.forEach(function(el, i){
-      setTimeout(function(){ reveal(el); }, i * 90);
-    });
-    removeEventListener('scroll', releaseGated);
+/* --- the record: pick a kind of tool, see where it sits and what it is --- */
+(function () {
+  var rec = document.querySelector('[data-record]');
+  if (!rec) return;
+  var TOOLS = {
+    create:  'Configure & quote · Configure with AI · Specification document · Final quote · Email teaser · QR card · Listing sheet',
+    analyse: 'Build audit · Ask the ERP · Lead research · Parts report · Labour report · Marketing report',
+    operate: 'Job card · Pick list · Parts list · Handover · Commercial invoice'
+  };
+  var buttons = rec.querySelectorAll('.ctl button'), out = rec.querySelector('.out');
+  function pick(kind){
+    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.kind === kind)); });
+    rec.querySelectorAll('.st').forEach(function(st){ st.classList.toggle('on', st.dataset.kind === kind); });
+    out.textContent = TOOLS[kind];
   }
-  addEventListener('scroll', releaseGated, {passive:true});
-
-  /* the hero's callouts draw themselves once, on load */
-  var svg = document.querySelector('[data-callouts]');
-  if (svg && animate && A.createDrawable) {
-    animate(A.createDrawable(svg.querySelectorAll('.ldr')), {
-      draw:['0 0','0 1'], duration:760,
-      delay: stagger ? stagger(120, {start:420}) : 420, ease:'inOut(2)'
-    });
-    animate(svg.querySelectorAll('.dot'), {
-      opacity:[0,1], duration:220,
-      delay: stagger ? stagger(120, {start:1000}) : 1000, ease:'linear'
-    });
-  }
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.kind); }); });
+  pick('create');
 })();

@@ -6,7 +6,7 @@
 <title>toolbox</title>
 <meta name="description" content="A node workspace for companies that build things one at a time.">
 <meta property="og:title" content="toolbox">
-<meta property="og:description" content="We are not a software company, but we do ship code. We are not an AI company, but we do use AI. We think you should too.">
+<meta property="og:description" content="We are not an AI company, but we do use AI. We think you should too.">
 <meta property="og:image" content="assets/og.png">
 <link rel="stylesheet" href="site.css">
 </head>
@@ -17,8 +17,8 @@
   <a class="to" href="#start">Submit a tool</a>
 </nav>
 
-<!-- ============================ HERO ============================ -->
-<header class="hero">
+<!-- ============================ 1 · THE POINT ============================ -->
+<header class="hero page">
   <div class="hero-inner wrap">
 
     <div class="tbx-stage" id="tbxStage">
@@ -36,36 +36,13 @@
         <div class="latch l"></div><div class="latch r"></div>
         <div class="mark">toolbox</div>
       </div>
-
-      <svg class="callouts" viewBox="0 0 1760 560" preserveAspectRatio="xMidYMid meet" data-callouts>
-        <path class="ldr" d="M 706 176 L 662 132 H 430"/>
-        <circle class="dot" cx="706" cy="176" r="4"/>
-        <text text-anchor="end" x="430" y="102" data-scramble>One record</text>
-        <text text-anchor="end" class="sub" x="430" y="124" data-scramble>from the first quote to delivery</text>
-
-        <path class="ldr" d="M 1000 324 L 1044 280 H 1330"/>
-        <circle class="dot" cx="1000" cy="324" r="4"/>
-        <text x="1330" y="250" data-scramble>Create</text>
-        <text class="sub" x="1330" y="272" data-scramble>configurations, quotes, documents</text>
-
-        <path class="ldr" d="M 690 432 L 646 476 H 430"/>
-        <circle class="dot" cx="690" cy="432" r="4"/>
-        <text text-anchor="end" x="430" y="446" data-scramble>Analyse</text>
-        <text text-anchor="end" class="sub" x="430" y="468" data-scramble>audits, research, reports</text>
-
-        <path class="ldr" d="M 1010 478 L 1046 514 H 1330"/>
-        <circle class="dot" cx="1010" cy="478" r="4"/>
-        <text x="1330" y="484" data-scramble>Operate</text>
-        <text class="sub" x="1330" y="506" data-scramble>job cards, pick lists, handover</text>
-      </svg>
     </div>
 
     <div class="hero-foot">
-      <div class="rule" data-onscroll data-draw></div>
+      <div class="rule" data-draw></div>
       <div class="split" style="margin-top:18px;align-items:flex-end">
-        <span class="hero-mk" data-onscroll data-rise>toolbox</span>
-        <span class="hero-slogan" data-onscroll data-rise>
-          We are not a software company,<br>but we do ship code.<br>
+        <span class="hero-mk" data-rise>toolbox</span>
+        <span class="hero-slogan" data-rise>
           We are not an AI company,<br>but we do use AI.<br>We think you should too.
         </span>
       </div>
@@ -74,224 +51,54 @@
   <span class="scroll-cue">Scroll</span>
 </header>
 
-<!-- ============================ THE GAP ============================ -->
-<section class="wrap">
-  <div class="hair" data-draw></div>
-  <div class="split" style="margin-top:26px">
-    <p class="caps soft" data-scramble>01 — The gap</p>
-    <p class="caps soft" data-scramble>Between the CRM and the ERP</p>
+<!-- ============================ 2 · THE EXAMPLE ============================ -->
+<section class="wrap page">
+  <div class="split">
+    <p class="caps soft" data-scramble>Software moved</p>
+    <p class="caps soft" data-scramble>Your systems didn't</p>
   </div>
   <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>Software moved.</span>
-    <span class="ln" data-rise>Your systems didn't.</span>
+    <span class="ln" data-rise>One record,</span>
+    <span class="ln" data-rise>quote to delivery.</span>
   </h2>
-  <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
+  <p class="lede" style="margin-top:clamp(16px,2.4vw,28px)" data-rise>
     A CRM bought in 2019. An ERP set up by someone who left. An accounts package
     that exports spreadsheets. Your business bends around the gaps between them
     every day and calls it normal.
   </p>
-  <p class="caps" style="margin-top:clamp(20px,3vw,36px);color:var(--red)" data-rise>
-    Toolbox is the record that spans the gap.
-  </p>
+
+  <div class="record" data-record data-rise>
+    <div class="line">
+      <span class="st" data-kind="create" style="left:0"><span>Quote</span></span>
+      <span class="st" data-kind="analyse" style="left:50%"><span>Build</span></span>
+      <span class="st" data-kind="operate" style="left:100%"><span>Delivery</span></span>
+    </div>
+    <div class="ctl" role="group" aria-label="Tools">
+      <button type="button" data-kind="create" aria-pressed="true">Create</button>
+      <button type="button" data-kind="analyse" aria-pressed="false">Analyse</button>
+      <button type="button" data-kind="operate" aria-pressed="false">Operate</button>
+    </div>
+    <p class="lede out" aria-live="polite"></p>
+  </div>
 </section>
 
-<!-- ============================ ONE RECORD ============================ -->
-<section class="wrap">
-  <div class="hair" data-draw></div>
-  <div class="split" style="margin-top:26px">
-    <p class="caps soft" data-scramble>02 — One record</p>
-    <p class="caps soft" data-scramble>Quote to delivery</p>
-  </div>
-  <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>Sales and production</span>
-    <span class="ln" data-rise>open the same build.</span>
-  </h2>
-  <div class="rows">
-    <div class="row" data-rise><div class="split">
-      <p>Sales</p><p class="r">everything ever done for that customer</p>
-    </div></div>
-    <div class="row" data-rise><div class="split">
-      <p>The shop floor</p><p class="r">what it needs to build, and no more</p>
-    </div></div>
-  </div>
-  <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
-    Each person sees the tools their job allows, and nothing else.
-  </p>
-</section>
-
-<!-- ============================ THE TOOLS ============================ -->
-<section class="wrap">
-  <div class="hair" data-draw></div>
-  <div class="split" style="margin-top:26px">
-    <p class="caps soft" data-scramble>03 — The tools</p>
-    <p class="caps soft" data-scramble>A node on the record</p>
-  </div>
-  <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>Create.</span>
-    <span class="ln" data-rise>Analyse.</span>
-    <span class="ln" data-rise>Operate.</span>
-  </h2>
-  <div class="rows">
-    <div class="row" data-rise><div class="split">
-      <p class="t">Create</p><p class="r">configurations · quotes · specification documents · teasers · QR cards · listing sheets</p>
-    </div></div>
-    <div class="row" data-rise><div class="split">
-      <p class="t">Analyse</p><p class="r">build audits · questions to the ERP · lead research · parts, labour and marketing reports</p>
-    </div></div>
-    <div class="row" data-rise><div class="split">
-      <p class="t">Operate</p><p class="r">job cards · pick lists · parts lists · handover · commercial invoices</p>
-    </div></div>
-  </div>
-  <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
-    A tool takes one thing and makes another. One that does not fit the open
-    record is not offered.
-  </p>
-</section>
-
-<!-- ============================ BUILT FOR YOU ============================ -->
-<section class="wrap" id="start">
-  <div class="hair" data-draw></div>
-  <div class="split" style="margin-top:26px">
-    <p class="caps soft" data-scramble>04 — Built for you</p>
-    <p class="caps soft" data-scramble>Five steps</p>
-  </div>
-  <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>We are not a software</span>
-    <span class="ln" data-rise>company, but we do</span>
-    <span class="ln" data-rise>ship code.</span>
-  </h2>
-  <div class="steps">
-    <div class="step" data-rise><span class="k">01</span>
-      <span class="v"><b>Submit</b> — the work, and what it should produce.</span></div>
-    <div class="step" data-rise><span class="k">02</span>
-      <span class="v"><b>Assess</b> — what it takes, what it makes, one or many, who sees it.</span></div>
-    <div class="step" data-rise><span class="k">03</span>
-      <span class="v"><b>Build</b> — against your systems and your documents.</span></div>
-    <div class="step" data-rise><span class="k">04</span>
-      <span class="v"><b>Deploy</b> — a new node in your workspace. Nothing else moves.</span></div>
-    <div class="step" data-rise><span class="k">05</span>
-      <span class="v"><b>Deliver</b> — your team runs it; the output stays on the record.</span></div>
-  </div>
-  <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
-    Tell us the work. We build the tool, and ship it into your workspace.
-  </p>
-</section>
-
-<!-- ============================ AI (dark) ============================ -->
-<section class="dark">
+<!-- ============================ 3 · THE ACTION (dark) ============================ -->
+<section class="dark page cta" id="start">
   <div class="wrap">
-    <div class="split">
-      <p class="caps soft" data-scramble>05 — Where AI is used</p>
-      <p class="caps soft" data-scramble>Where it earns its place</p>
-    </div>
-    <h2 style="margin-top:clamp(20px,3vw,40px)">
-      <span class="ln" data-rise>We are not an AI company,</span>
-      <span class="ln" data-rise>but we do use AI.</span>
+    <h2>
+      <span class="ln" data-rise>What would you</span>
+      <span class="ln" data-rise>build first?</span>
     </h2>
-    <div class="rows">
-      <div class="row"><div class="split">
-        <p class="t" data-scramble>Configure with AI</p><p class="r" data-scramble>a car described in words, priced</p>
-      </div></div>
-      <div class="row"><div class="split">
-        <p class="t" data-scramble>Lead research</p><p class="r" data-scramble>a briefing before the first call</p>
-      </div></div>
-      <div class="row"><div class="split">
-        <p class="t" data-scramble>Ask</p><p class="r" data-scramble>the ERP, answered from live records</p>
-      </div></div>
-      <div class="row fade"><div class="split">
-        <p class="t" data-scramble>Audit</p><p class="r" data-scramble>a build checked against its own history</p>
-      </div></div>
+    <p class="flow" data-rise>Submit<i>→</i>Assess<i>→</i>Build<i>→</i>Deploy<i>→</i>Deliver</p>
+    <a class="go" href="mailto:hello@toolbox.example" data-rise>Submit a tool</a>
+  </div>
+  <footer>
+    <div class="split">
+      <span class="caps soft">toolbox</span>
+      <span class="caps soft">Build with toolbox</span>
     </div>
-    <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
-      The software of the last era is static, and a workshop is not. AI is what
-      fits the one to the other: the tools bend to how you really work, and every
-      output is kept, with who asked and when. We think you should too.
-    </p>
-  </div>
+  </footer>
 </section>
-
-<!-- ============================ SITS ON WHAT YOU HAVE ============================ -->
-<section class="wrap">
-  <div class="split">
-    <p class="caps soft" data-scramble>06 — Sits on what you have</p>
-    <p class="caps soft" data-scramble>Reads both, writes once</p>
-  </div>
-  <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>Not an ERP.</span>
-    <span class="ln" data-rise>Not a CRM.</span>
-    <span class="ln" data-rise>On top of both.</span>
-  </h2>
-  <div class="steps">
-    <div class="step" data-rise><span class="k">ERP</span><span class="v">Odoo</span></div>
-    <div class="step" data-rise><span class="k">CRM</span><span class="v">GoHighLevel</span></div>
-    <div class="step" data-rise><span class="k">WEB</span><span class="v">Google Analytics 4 · your website</span></div>
-    <div class="step" data-rise><span class="k">ADS</span><span class="v">Meta Ads · Google Ads</span></div>
-  </div>
-  <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
-    Toolbox reads your systems, and writes to the ERP once, at handover.
-  </p>
-</section>
-
-<!-- ============================ IN PRODUCTION ============================ -->
-<section class="wrap">
-  <div class="hair" data-draw></div>
-  <div class="split" style="margin-top:26px">
-    <p class="caps soft" data-scramble>07 — In production</p>
-    <p class="caps soft" data-scramble>Twisted, tenant one</p>
-  </div>
-  <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>Built inside a</span>
-    <span class="ln" data-rise>real workshop.</span>
-  </h2>
-  <div class="figs">
-    <div data-rise><span class="n">4</span><span class="caps soft">companies, one install</span></div>
-    <div data-rise><span class="n">30</span><span class="caps soft">tools declared</span></div>
-  </div>
-  <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
-    Twisted is the first company on Toolbox: automotive, marine, composites and
-    hydrographics, on one platform.
-  </p>
-</section>
-
-<!-- ============================ WHO IT FITS ============================ -->
-<section class="wrap">
-  <div class="hair" data-draw></div>
-  <div class="split" style="margin-top:26px">
-    <p class="caps soft" data-scramble>08 — Who it fits</p>
-    <p class="caps soft" data-scramble>Boutique automotive · coachbuilders · restomods</p>
-  </div>
-  <h2 style="margin-top:clamp(20px,3vw,40px)">
-    <span class="ln" data-rise>Low volume.</span>
-    <span class="ln" data-rise>High repetition.</span>
-  </h2>
-  <div class="steps">
-    <div class="step" data-rise><span class="k">01</span>
-      <span class="v">A few dozen units a year, each carrying <b>dozens of jobs</b>.</span></div>
-    <div class="step" data-rise><span class="k">02</span>
-      <span class="v">Tens of people, <b>not thousands</b>.</span></div>
-    <div class="step" data-rise><span class="k">03</span>
-      <span class="v">An ERP and a CRM <b>already in place</b>.</span></div>
-  </div>
-</section>
-
-<!-- ============================ CLOSE ============================ -->
-<section class="wrap close">
-  <div class="rule" data-draw></div>
-  <h2 style="margin-top:clamp(24px,4vw,44px)">
-    <span class="ln" data-rise>What would you</span>
-    <span class="ln" data-rise>build first?</span>
-  </h2>
-  <p class="lede" style="margin-top:clamp(20px,3vw,36px)" data-rise>
-    <a href="mailto:hello@toolbox.example">Submit a tool</a>
-  </p>
-</section>
-
-<footer class="wrap">
-  <div class="split">
-    <span class="caps soft">toolbox</span>
-    <span class="caps soft">Build with toolbox</span>
-  </div>
-</footer>
 
 <script src="vendor/anime.umd.min.js"></script>
 <script src="site.js"></script>

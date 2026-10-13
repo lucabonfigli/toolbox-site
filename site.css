@@ -25,7 +25,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
 body{
   background:var(--paper);color:var(--ink);
   font-family:var(--thin);font-weight:200;
@@ -53,6 +53,7 @@ h2 .ln{display:block}
       letter-spacing:.05em;color:var(--ink-soft);max-width:62ch}
 
 section{padding:var(--gap) 0}
+.page{min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center}
 
 /* === NAV ================================================================ */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;
@@ -107,19 +108,10 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
   display:grid;place-items:center;border:none;background:none;
   font-family:'Orbitron',var(--mono);font-size:52px;letter-spacing:.06em;color:var(--ink)}
 
-/* leader lines, as on the cover */
-.callouts{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
-.callouts .ldr{fill:none;stroke:var(--ink);stroke-width:1;vector-effect:non-scaling-stroke}
-.callouts .dot{fill:var(--red)}
-.callouts text{font-family:var(--mono);font-size:17px;letter-spacing:.14em;
-  text-transform:uppercase;fill:var(--ink)}
-.callouts text.sub{font-size:14px;letter-spacing:.1em;fill:var(--ink-soft)}
-@media (max-width:900px){ .callouts{display:none} }
-
 .hero-foot{width:100%;margin-top:clamp(20px,4vw,44px)}
 .hero-mk{font-family:'Orbitron',var(--mono);font-size:clamp(38px,8vw,104px);
   letter-spacing:.06em;text-transform:lowercase;line-height:1}
-.hero-slogan{font-family:var(--mono);font-weight:700;font-size:clamp(11px,1.15vw,17px);
+.hero-slogan{font-family:var(--mono);font-weight:400;font-size:clamp(11px,1.15vw,17px);
   letter-spacing:.18em;text-transform:uppercase;line-height:1.7;text-align:right}
 @media (max-width:720px){ .hero-slogan{text-align:left} }
 
@@ -134,36 +126,37 @@ nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.2
 .dark .hair{background:rgba(239,235,225,.24)}
 .dark .soft{color:rgba(239,235,225,.55)}
 
-/* ruled rows, the deck's specimen device */
-.rows{margin-top:clamp(24px,4vw,44px)}
-.rows .row{border-top:2px solid currentColor;padding:clamp(14px,2.4vw,26px) 0}
-.rows .row p{font-family:var(--display);font-weight:400;text-transform:uppercase;
-  font-size:clamp(19px,3.1vw,46px);line-height:1;letter-spacing:.01em}
-.rows .row .t{color:var(--red)}
-.rows .row .r{font-family:var(--mono);text-transform:none;letter-spacing:.04em;
-  font-size:clamp(13px,1.35vw,20px);line-height:1.5}
-.rows .row.fade{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%);
-  mask-image:linear-gradient(90deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.26) 100%)}
+/* === THE RECORD — page two's example ================================== */
+.record{margin-top:clamp(28px,5vw,64px)}
+.record .line{position:relative;height:2px;background:var(--ink);margin:0 6px}
+.record .st{position:absolute;top:50%;transform:translate(-50%,-50%);
+  width:11px;height:11px;border-radius:50%;background:var(--ink);transition:background var(--motion,160ms)}
+.record .st.on{background:var(--red)}
+.record .st span{position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;font-family:var(--mono);font-size:clamp(10px,1vw,13px);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.record .st:first-child span{left:0;transform:none}
+.record .st:last-child span{left:auto;right:0;transform:none}
+.record .ctl{margin-top:clamp(52px,6vw,76px);display:flex;gap:8px;flex-wrap:wrap}
+.record .ctl button{height:40px;padding:0 20px;border-radius:999px;border:1px solid var(--ink);
+  background:none;color:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.2em;
+  text-transform:uppercase;cursor:pointer;transition:background var(--motion,160ms),color var(--motion,160ms)}
+.record .ctl button:hover,.record .ctl button:focus-visible{background:var(--ink);color:var(--paper);outline:none}
+.record .ctl button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.record .out{margin-top:clamp(16px,2vw,24px);min-height:3.6em}
 
-/* === STEPS ============================================================== */
-.steps{display:grid;gap:0;margin-top:clamp(24px,4vw,44px)}
-.step{border-top:1px solid var(--ink-faint);padding:clamp(16px,2.6vw,30px) 0;
-  display:flex;gap:clamp(16px,3vw,44px);align-items:baseline}
-.step .k{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--red);flex:none;width:34px}
-.step .v{font-size:clamp(17px,2.1vw,30px);line-height:1.4}
-.step .v b{font-weight:400}
-
-/* === FIGURES ============================================================ */
-.figs{display:flex;gap:clamp(32px,8vw,140px);flex-wrap:wrap;margin-top:clamp(24px,4vw,44px)}
-.figs .n{font-family:var(--display);font-size:clamp(76px,12vw,180px);line-height:.9}
-.figs .caps{display:block;margin-top:12px}
-
-/* === CLOSE ============================================================== */
-.close a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--red)}
-footer{padding:26px 0 34px;border-top:2px solid var(--ink)}
+/* === CALL TO ACTION — page three, the carbon band ===================== */
+.flow{font-family:var(--mono);font-size:clamp(12px,1.3vw,18px);letter-spacing:.22em;
+  text-transform:uppercase;margin-top:clamp(20px,3vw,36px)}
+.flow i{font-style:normal;color:var(--red);padding:0 .6em}
+.go{display:inline-flex;align-items:center;height:48px;padding:0 28px;margin-top:clamp(28px,4vw,48px);
+  border-radius:999px;background:var(--red);color:var(--paper);text-decoration:none;
+  font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  transition:background var(--motion,160ms),color var(--motion,160ms)}
+.go:hover,.go:focus-visible{background:var(--paper);color:var(--ink);outline:none}
+.cta{position:relative}
+.cta footer{position:absolute;left:0;right:0;bottom:0;padding:22px var(--pad) 28px}
 
 /* reveal state — set by script, cleared on intersect */
 [data-rise]{opacity:0}
-[data-onscroll]{opacity:0}
-[data-onscroll].rule{transform:scaleX(0)}
-@media (prefers-reduced-motion:reduce){ [data-rise],[data-onscroll]{opacity:1} [data-onscroll].rule{transform:none} html{scroll-behavior:auto} }
+@media (prefers-reduced-motion:reduce){ [data-rise]{opacity:1} html{scroll-behavior:auto} }
