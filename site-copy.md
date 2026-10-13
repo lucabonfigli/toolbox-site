@@ -151,15 +151,3 @@ thirty tools declared.
 **Headline:** What would you build first?
 
 **CTA:** Submit a tool
-
----
-
-## Before it goes live
-
-1. **Twisted's consent** to be named, and to sections 1, 3, 6 and 8 showing
-   its real screens.
-2. **The contact** — an address or a form, on which domain.
-3. **Pricing** — absent from the copy until decided.
-4. **Tenancy** — one install per client, or one hosted service; the copy says
-   neither.
-5. **The `TOOLBOX` tab** — the product and the bar's last tab share a name.
