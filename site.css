@@ -62,6 +62,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;
   mix-blend-mode:difference;color:#fff;pointer-events:none}
 nav .mk{font-family:'Orbitron',var(--mono);font-size:clamp(15px,1.5vw,21px);
   letter-spacing:.16em;text-transform:lowercase}
+nav .links{display:flex;gap:clamp(18px,3vw,40px)}
 nav .to{font-family:var(--mono);font-size:clamp(10px,1vw,13px);letter-spacing:.22em;
   text-transform:uppercase;pointer-events:auto;color:#fff;text-decoration:none}
 
